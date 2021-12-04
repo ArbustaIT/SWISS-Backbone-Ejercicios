@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Ejemplo con Backbone.js</title>
+</head>
+<body>
+
+
+  <!-- Vamos a utilizar éste DIV para agregar contenido a nuestro HTML, por ahora le dejo un texto por defecto -->
+  <div id="container">Loading...</div>
+
+  <!-- ============ -->
+  <!-- dependencias -->
+  <!-- ============ -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js" type="text/javascript"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.2/backbone-min.js" type="text/javascript"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.0/backbone.localStorage-min.js" type="text/javascript"></script>  
+
+  <script type="text/javascript">
+    var AppView = Backbone.View.extend({
+      el: $('#container'),
+      // template 
+      template: _.template("<h3>Hola, esta es la fecha y hora actual <%= who %> </h3>"),
+      initialize: function(){
+        this.render();
+      },
+      render: function(){
+		let current_datetime = new Date()
+		let formatted_date = current_datetime.getFullYear() 
+				+ "-" + (current_datetime.getMonth() + 1) 
+				+ "-" + current_datetime.getDate() 
+				+ " " + current_datetime.getHours() 
+				+ ":" + current_datetime.getMinutes() 
+				+ ":" + current_datetime.getSeconds() 
+		  
+        this.$el.html(this.template({who: formatted_date }));
+      }
+    });
+
+    var appView = new AppView();
+  </script>
+  
+</body>
+</html>
