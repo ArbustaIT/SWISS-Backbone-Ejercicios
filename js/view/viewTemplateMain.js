@@ -1,7 +1,9 @@
 define([
     'lib/backbone',
     'text/templates!templateMain.html',
-], function(Backbone, templateMain){
+    'lib/jquery',
+    'lib/underscore',
+], function($, _,Backbone, templateMain){
     var MainView = Backbone.View.extend({
         el: '#main',
         initialize: function(){

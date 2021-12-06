@@ -19,14 +19,13 @@ requirejs.config({
 
    },
    paths: {
-        underscore: 'libs/underscore',
-        jquery: './lib/jquery',
-        backbone: 'libs/backbone',
-        bootstrap: 'libs/bootstrap',
-        handlebars: '../node_modules/lib/handlebars',
+        underscore: '/js/lib/underscore',
+        jquery: 'js/lib/jquery',
+        backbone: 'js/lib/backbone',
+        bootstrap: 'js/lib/bootstrap',
+        handlebars: '../node_modules/handlebars/dist/handlebars',
    },
-   waitSeconds: 0,
-   urlArgs: 'v='+Math.floor(math.random()*9999)
+   waitSeconds: 0
 });
 
 
