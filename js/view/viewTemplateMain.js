@@ -2,7 +2,7 @@ define([
     'lib/backbone',
     'text/templates!templateMain.html',
     'lib/jquery',
-    'lib/underscore',
+    'lib/underscore', //verificar
 ], function($, _,Backbone, templateMain){
     var MainView = Backbone.View.extend({
         el: '#main',
